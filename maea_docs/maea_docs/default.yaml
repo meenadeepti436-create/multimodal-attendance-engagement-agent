@@ -1,0 +1,29 @@
+attendance:
+  min_continuous_seconds: 20
+  min_presence_ratio: 0.60
+  flicker_tolerance_s: 3
+  leave_after_s: 60
+  late_after_minutes: 10
+engagement:
+  window_s: 60
+  hop_s: 30
+  weights: {attention: 0.45, movement: 0.20, inactivity: 0.20, audio: 0.15}
+  ema_alpha: 0.4
+  levels: {high: 70, medium: 40}
+  yaw_limit_deg: 30
+  pitch_range_deg: [-25, 20]
+audio:
+  vad_aggressiveness: 2
+  turn_gap_s: 1.5
+agent:
+  use_llm: false
+  llm_model: llama3.2:3b
+  drop_threshold_points: 15
+  silent_stretch_s: 240
+privacy:
+  store_debug_frames: false
+  retention_days: 30
+  encrypt_embeddings: true
+performance:
+  process_every_n_frames: 2
+  max_width: 960
